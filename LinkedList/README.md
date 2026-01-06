@@ -17,6 +17,8 @@ Unlike arrays, linked lists do not store elements in contiguous memory locations
 
 - AddLast(value) – adds an element to the end of the list
 - RemoveLast() – removes the last element
+- AddFirst() - adds an element to the begining of the list
+- RemoveFirst() - removes the first element
 - ToArray() – converts the list to an array
 - Count – returns the number of elements in the list
 
@@ -28,7 +30,8 @@ Unlike arrays, linked lists do not store elements in contiguous memory locations
 | AddLast       | O(1)            | O(1)             |
 | RemoveLast    | O(n)            | O(1)             |
 | ToArray       | O(n)            | O(n)             |
-
+| AddFirst      | O(1)            | O(1)             |
+| RemoveFirst   | O(1)            | (O(1))
 ------------------------------------------------------------------------------
 ## Testing
 

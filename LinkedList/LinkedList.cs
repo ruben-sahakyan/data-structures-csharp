@@ -75,5 +75,50 @@ namespace DataStructures.Collections
                 current = current.Next;
             }
         }
+
+        /// <summary>
+        /// Adds a new element to the beginning of the linked list.
+        /// </summary>
+        /// <remarks>
+        /// Time complexity: O(1)  
+        /// Space complexity: O(1)
+        /// </remarks>
+        public void AddFirst(string value)
+        {
+            if(_head == null)
+            {
+                _head = new Node(value);
+                _tail = _head;
+                Count++;
+                return;
+            }
+            Node tempLink = _head;
+            _head = new Node(value);
+            _head.Next = tempLink;
+            Count++;
+        }
+
+        /// <summary>
+        /// Removes the first element of the linked list.
+        /// </summary>
+        /// <remarks>
+        /// Time complexity: O(1)  
+        /// Space complexity: O(1)
+        /// </remarks>
+        public void RemoveFirst()
+        {
+            if(_head == null)
+            {
+                return;
+            } else if(_head == _tail)
+            {
+                _head = null;
+                _tail = null;
+                Count--;
+                return;
+            }
+            _head = _head.Next;
+            Count--;
+        }
     }
 }
