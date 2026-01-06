@@ -1,0 +1,20 @@
+# IDE
+.idea/
+.vscode/
+
+# Build output
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Rider
+*.iml
