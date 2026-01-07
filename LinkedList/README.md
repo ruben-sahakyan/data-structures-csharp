@@ -19,6 +19,8 @@ Unlike arrays, linked lists do not store elements in contiguous memory locations
 - RemoveLast() – removes the last element
 - AddFirst() - adds an element to the begining of the list
 - RemoveFirst() - removes the first element
+- Find() - Finds the first element that matches the specified value.
+- FindLast() - Finds the last element that matches the specified value.
 - ToArray() – converts the list to an array
 - Count – returns the number of elements in the list
 
@@ -31,7 +33,9 @@ Unlike arrays, linked lists do not store elements in contiguous memory locations
 | RemoveLast    | O(n)            | O(1)             |
 | ToArray       | O(n)            | O(n)             |
 | AddFirst      | O(1)            | O(1)             |
-| RemoveFirst   | O(1)            | (O(1))
+| RemoveFirst   | O(1)            | (O(1))           |
+| Find          | O(n)            | O(1)             |
+| FindLast      | O(n)            | O(1)             |
 ------------------------------------------------------------------------------
 ## Testing
 

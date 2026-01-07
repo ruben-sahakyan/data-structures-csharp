@@ -120,5 +120,55 @@ namespace DataStructures.Collections
             _head = _head.Next;
             Count--;
         }
+        
+        /// <summary>
+        /// Finds the first element that matches the specified value.
+        /// </summary>
+        /// <remarks>
+        /// Time complexity: O(n)  
+        /// Space complexity: O(1)
+        /// </remarks>
+        public string? Find(string value)
+        {
+            if(_head == null)
+            {
+                return null;
+            }
+            Node current = _head;
+            while(current != null)
+            {
+                if(current.Value == value)
+                {
+                    return current.Value;
+                }
+                current = current.Next;
+            }
+            return null;
+        }
+        /// <summary>
+        /// Finds the last element that matches the specified value.
+        /// </summary>
+        /// <remarks>
+        /// Time complexity: O(n)  
+        /// Space complexity: O(1)
+        /// </remarks>
+        public string? FindLast(string value)
+        {
+            string? result = null;
+            if(_head == null)
+            {
+                return null;
+            }
+            Node current = _head;
+            while(current != null)
+            {
+                if(current.Value == value)
+                {
+                    result = current.Value;
+                }
+                current = current.Next;
+            }
+            return result;
+        }
     }
 }
