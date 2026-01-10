@@ -13,6 +13,7 @@ and validating them with unit tests.
 -----------------
 ## Project Structure
 
+```
 DataStructures/
 ├── LinkedList/
 │   ├── LinkedList.cs
@@ -32,7 +33,7 @@ DataStructures/
 ├── tests/
 │   └── DataStructures.Tests
 └── DataStructures.sln
-
+```
 -----------------
 ## Testing
 
