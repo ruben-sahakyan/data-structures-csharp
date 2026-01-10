@@ -170,5 +170,27 @@ namespace DataStructures.Collections
             }
             return result;
         }
+        /// <summary>
+        /// Reverses the linked list.
+        /// </summary>
+        /// <remarks>
+        /// Time complexity: O(n)  
+        /// Space complexity: O(1)
+        /// </remarks>
+        public void Reverse()
+        {
+            Node? temp = _tail;
+            _tail = _head;
+            _head = temp;
+            Node? prev = null;
+            Node? current = _tail;
+            while(current != null)
+            {
+                Node? tempPointer = current.Next;
+                current.Next = prev;
+                prev = current;
+                current = tempPointer;
+            }
+        }
     }
 }

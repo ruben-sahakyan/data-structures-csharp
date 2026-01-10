@@ -219,6 +219,7 @@ namespace DataStructures.Tests
             var result = list.FindLast("node3");
             Assert.Equal("node3", result);
         }
+        [Fact]
         public void FindLast_OnMultipleElements_WhenValueOccursMultipleTimes_ReturnsLastMatch()
         {
             var list = new LinkedList();
@@ -230,6 +231,41 @@ namespace DataStructures.Tests
             list.AddLast("node5");
             var result = list.FindLast("node3");
             Assert.Equal("node3", result);
+        }
+        [Fact]
+        public void Reverse_OnEmptyList_DoesNothing()
+        {
+            var list = new LinkedList();
+            list.Reverse();
+            Assert.Equal(
+                new string[] {},
+                list.ToArray()
+            );
+        }
+        [Fact]
+        public void Reverse_OnSingleElementList_DoesNothing()
+        {
+            var list = new LinkedList();
+            list.AddFirst("node1");
+            list.Reverse();
+            Assert.Equal(
+                new string[] {"node1"},
+                list.ToArray()
+            );
+        }
+        [Fact]
+        public void Reverse_OnMultipleElements_ReversesList()
+        {
+            var list = new LinkedList();
+            list.AddFirst("node1");
+            list.AddFirst("node2");
+            list.AddFirst("node3");
+            list.AddFirst("node4");
+            list.Reverse();
+            Assert.Equal(
+                new string[] {"node1", "node2", "node3", "node4"},
+                list.ToArray()
+            );
         }
     }
 }

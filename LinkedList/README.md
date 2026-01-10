@@ -21,6 +21,7 @@ Unlike arrays, linked lists do not store elements in contiguous memory locations
 - RemoveFirst() - removes the first element
 - Find() - Finds the first element that matches the specified value.
 - FindLast() - Finds the last element that matches the specified value.
+- Reverse() - Reverses the linked list.
 - ToArray() – converts the list to an array
 - Count – returns the number of elements in the list
 
@@ -36,6 +37,7 @@ Unlike arrays, linked lists do not store elements in contiguous memory locations
 | RemoveFirst   | O(1)            | (O(1))           |
 | Find          | O(n)            | O(1)             |
 | FindLast      | O(n)            | O(1)             |
+| Reverse       | O(n)            | 0(1)             |
 ------------------------------------------------------------------------------
 ## Testing
 
