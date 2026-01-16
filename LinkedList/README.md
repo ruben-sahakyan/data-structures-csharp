@@ -24,6 +24,7 @@ Unlike arrays, linked lists do not store elements in contiguous memory locations
 - Reverse() - Reverses the linked list.
 - ToArray() – converts the list to an array
 - Count – returns the number of elements in the list
+- HasCycle - returns true if the linked list contains a cycle; otherwise, false
 
 -----------------------------------------------------------------------------
 ## Time and Space Complexity
@@ -38,6 +39,7 @@ Unlike arrays, linked lists do not store elements in contiguous memory locations
 | Find          | O(n)            | O(1)             |
 | FindLast      | O(n)            | O(1)             |
 | Reverse       | O(n)            | 0(1)             |
+| HasCycle      | O(n)            | O(1)             |
 ------------------------------------------------------------------------------
 ## Testing
 
