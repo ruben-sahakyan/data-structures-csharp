@@ -267,5 +267,48 @@ namespace DataStructures.Tests
                 list.ToArray()
             );
         }
+        [Fact]
+        public void CheckHasCycle_OnMultipleElements_HasCycle_ReturnsTrue()
+        {
+            var list = new LinkedList();
+            var firstNode = list.AddLastInternal("node1");
+            list.AddLastInternal("node2");
+            list.AddLastInternal("node3");
+            list.AddLastInternal("node4");
+            var lastNode = list.AddLastInternal("node5");
+            lastNode.Next = firstNode;
+            Assert.True(list.HasCycle());
+        }
+        [Fact]
+        public void CheckHasCycle_OnMultipleElements_NoCycle_ReturnsFalse()
+        {
+            var list = new LinkedList();
+            list.AddLastInternal("node1");
+            list.AddLastInternal("node2");
+            list.AddLastInternal("node3");
+            list.AddLastInternal("node4");
+            Assert.False(list.HasCycle());
+        }
+        [Fact]
+        public void CheckHasCycle_OnEmptyList_ReturnsFalse()
+        {
+            var list = new LinkedList();
+            Assert.False(list.HasCycle());
+        }
+        [Fact]
+        public void CheckHasCycle_OnSingleElement_NoCycle_ReturnsFalse()
+        {
+            var list = new LinkedList();
+            list.AddLastInternal("node1");
+            Assert.False(list.HasCycle());
+        }
+        [Fact]
+        public void CheckHasCycle_OnSingleElement_HasCycle_ReturnsTrue()
+        {
+            var list = new LinkedList();
+            var singleNode = list.AddLastInternal("node1");
+            singleNode.Next = singleNode;
+            Assert.True(list.HasCycle());
+        }
     }
 }

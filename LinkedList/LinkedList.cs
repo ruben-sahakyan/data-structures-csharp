@@ -2,8 +2,8 @@ namespace DataStructures.Collections
 {
     public class LinkedList
     {
-        private Node? _head = null;
-        private Node? _tail = null;
+        internal Node? _head = null;
+        internal Node? _tail = null;
         public int Count { get; private set; }
 
         public string[] ToArray()
@@ -42,6 +42,30 @@ namespace DataStructures.Collections
             _tail = new Node(value);
             current.Next = _tail;
             Count++;
+        }
+        /// <summary>
+        /// Adds a new node to the end of the linked list and returns it.
+        /// Intended for internal list construction and advanced scenarios.
+        /// Not part of the public API.
+        /// </summary>
+        /// <remarks>
+        /// Time complexity: O(1)  
+        /// Space complexity: O(1)
+        /// </remarks>
+        internal Node AddLastInternal(string value)
+        {
+            if(_head == null) 
+            {
+                _head = new Node(value);
+                _tail = _head;
+                Count++;
+                return _tail;
+            }
+            Node current = _tail!;
+            _tail = new Node(value);
+            current.Next = _tail;
+            Count++;
+            return _tail;
         }
         /// <summary>
         /// Removes the last element of the linked list.
@@ -191,6 +215,34 @@ namespace DataStructures.Collections
                 prev = current;
                 current = tempPointer;
             }
+        }
+        /// <summary>
+        /// HasCycle the linked list.
+        /// </summary>
+        /// <remarks>
+        /// Time complexity: O(n)  
+        /// Space complexity: O(1)
+        /// </remarks>
+        public bool HasCycle()
+        {
+            Node? slowPoint = null;
+            Node? fastPoint = null;
+            if(_head == null) 
+            {
+                return false;
+            }
+            slowPoint = _head;
+            fastPoint = _head;
+            while(fastPoint.Next != null && fastPoint.Next.Next != null)
+            {
+                fastPoint = fastPoint.Next.Next;
+                slowPoint = slowPoint.Next;
+                if(slowPoint == fastPoint)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

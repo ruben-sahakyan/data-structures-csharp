@@ -1,11 +1,11 @@
 namespace DataStructures.Collections
 {
-    class Node
+    internal class Node
     {
-        public string Value;
-        public Node? Next = null;
+        internal string Value;
+        internal Node? Next = null;
 
-        public Node(string value)
+        internal Node(string value)
         {
             Value = value;
         }
